@@ -88,6 +88,7 @@ rm openjdk-11.0.2_linux-x64_bin.tar.gz
 
 export JAVA_HOME="${HOME}/spark/jdk-11.0.2"
 export PATH="${JAVA_HOME}/bin:${PATH}"
+```
 
 Download and install Spark:
 ```
