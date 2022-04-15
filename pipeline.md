@@ -121,5 +121,8 @@ Finally, pipeline is triggered:
 
 ![Airflow-graph](./images/airflow-graph.png)
 
+Result:
+![Big Query](./images/big-query-results.png)
+
 
    

@@ -115,7 +115,7 @@ default_args = {
 
 with DAG (
     dag_id = 'eu_proc_processing',
-    schedule_interval = '@daily',
+    schedule_interval = '@monthly',
     default_args = default_args,
     catchup = False
 ) as dag:
