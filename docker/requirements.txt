@@ -1,0 +1,7 @@
+apache-airflow-providers-google
+apache-airflow-providers-http
+pyarrow
+pandas
+sqlalchemy
+psycopg2-binary
+pyspark
