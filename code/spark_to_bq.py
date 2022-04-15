@@ -195,8 +195,8 @@ df = df \
 # Repartition df
 df.repartition(48)
 
-# Convert to parquet and save to datalake
-# df.write.parquet('gs://dl-eu-pub-tender/raw_data/parquet', mode = 'overwrite')
+# Convert to parquet and save to datalake as backup for calcilations
+df.write.parquet('gs://dl-eu-pub-tender/raw_data/parquet', mode = 'overwrite')
 
 # Create temporary table for Spark sql queries
 df.createOrReplaceTempView('data')
@@ -233,10 +233,17 @@ LIMIT 12;
 
 # Show tender values by country over years
 df_values_by_country = spark.sql("""
-SELECT tender_country, tender_year, sum(final_price) AS value
+WITH countries As
+(SELECT tender_country, sum(final_price)
 FROM data
-GROUP BY tender_country, tender_year
-ORDER BY sum(final_price) DESC;
+GROUP BY tender_country)
+
+SELECT tender_year, data.tender_country, sum(final_price)
+from data
+join countries
+on countries.tender_country = data.tender_country
+where tender_year is not null
+Group by tender_year, data.tender_country;
 """)
 
 # Show largest public tender ever
@@ -249,15 +256,29 @@ LIMIT 1;
 
 # Show how largest buyer revenues develop over years
 df_largest_bidders_revenues = spark.sql("""
-SELECT bidder_name, tender_year, sum(final_price) AS revenue
+WITH largest_bidders As
+(SELECT bidder_name, sum(final_price)
 FROM data
-GROUP BY bidder_name, tender_year
-ORDER BY sum(final_price) DESC
-LIMIT 15;
+GROUP BY bidder_name
+order by sum(final_price) desc
+limit 15)
+
+SELECT tender_year, data.bidder_name, sum(final_price)
+from data
+join largest_bidders
+on largest_bidders.bidder_name = data.bidder_name
+where (data.tender_year is not null
+and
+data.final_price is not null)
+Group by tender_year, data.bidder_name;
 """)
 
 # Write to Big Query
-
+df_largest_suppliers.coalesce(1) \
+    .write.format('bigquery') \
+    .option('table', f'{OUTPUT}.largest_suppliers') \
+    .mode('Overwrite') \
+    .save()
 
 df_largest_sectors.coalesce(1) \
     .write.format('bigquery') \
