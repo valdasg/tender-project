@@ -88,6 +88,11 @@ rm openjdk-11.0.2_linux-x64_bin.tar.gz
 
 export JAVA_HOME="${HOME}/spark/jdk-11.0.2"
 export PATH="${JAVA_HOME}/bin:${PATH}"
+<<<<<<< HEAD
+=======
+
+java --version
+>>>>>>> 3910ec072fe91e3e2207199887eec3433faaef16
 ```
 
 Download and install Spark:
@@ -104,7 +109,10 @@ After instalation, I check if it succeded by checking versions:
 java --version
 spark-shell
 ```
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3910ec072fe91e3e2207199887eec3433faaef16
 
 

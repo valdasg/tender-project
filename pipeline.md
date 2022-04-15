@@ -104,7 +104,11 @@ Pipeline step by step:
         "main_python_file_uri": PYSPARK_URI,
         "jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.24.2.jar"]
     },
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> 3910ec072fe91e3e2207199887eec3433faaef16
    ```
 
 6. Delete Dataproc cluster with dataproc operator:
