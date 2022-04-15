@@ -13,12 +13,12 @@ All data should folow same schema to allow multisection data analytics across co
 
 
 ## Technologies used
-Cloud: GCP
-Infrastructute as Code: Terraform
-Data orchestration: Apache Airflow
-Data Warehouse: Big Query
-Batch Processing: Spark
-Visualisation: Google Studio
+- Cloud: GCP
+- Infrastructute as Code: Terraform
+- Data orchestration: Apache Airflow
+- Data Warehouse: Big Query
+- Batch Processing: Spark
+- Visualisation: Google Studio
 
 ## Approach to Problem
  1. [Create infrastructure for GCP via Terraform](initial_setup.md):
