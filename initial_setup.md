@@ -75,7 +75,7 @@ source .bashrc
 ```
 
 ### Install Apache Spark for batch processing of data
-Java is needed to run Spark
+Java is needed to run Spark:
 
 ```
 mkdir spark

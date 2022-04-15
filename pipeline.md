@@ -95,21 +95,17 @@ Pipeline step by step:
    I have used Airflow [documentation](https://github.com/GoogleCloudDataproc/spark-bigquery-connector) and conncetor [documentation](https://github.com/GoogleCloudDataproc/spark-bigquery-connector)
 
    Note: important, do not forget to add jar file location with corrcet Scala version to your dag:
-
    ```
    PYSPARK_JOB = {
-    "reference": {"project_id": PROJECT_ID},
-    "placement": {"cluster_name": CLUSTER_NAME},
-    "pyspark_job": {
-        "main_python_file_uri": PYSPARK_URI,
-        "jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.24.2.jar"]
-    },
-<<<<<<< HEAD
-    }
-=======
-}
->>>>>>> 3910ec072fe91e3e2207199887eec3433faaef16
+   "reference": {"project_id": PROJECT_ID},
+   "placement": {"cluster_name": CLUSTER_NAME},
+   "pyspark_job": {
+      "main_python_file_uri": PYSPARK_URI,
+       "jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.24.2.jar"]
+       },
+   }
    ```
+   
 
 6. Delete Dataproc cluster with dataproc operator:
     ```    
