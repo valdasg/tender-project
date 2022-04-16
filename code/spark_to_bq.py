@@ -234,16 +234,16 @@ LIMIT 12;
 # Show tender values by country over years
 df_values_by_country = spark.sql("""
 WITH countries As
-(SELECT tender_country, sum(final_price)
+(SELECT tender_country, sum(final_price) AS amount
 FROM data
 GROUP BY tender_country)
 
-SELECT tender_year, data.tender_country, sum(final_price)
-from data
-join countries
-on countries.tender_country = data.tender_country
-where tender_year is not null
-Group by tender_year, data.tender_country;
+SELECT tender_year, data.tender_country, sum(final_price) AS amount
+FROM data
+JOIN countries
+ON countries.tender_country = data.tender_country
+WHERE tender_year is not null
+GROUP BY tender_year, data.tender_country;
 """)
 
 # Show largest public tender ever
@@ -257,20 +257,20 @@ LIMIT 1;
 # Show how largest buyer revenues develop over years
 df_largest_bidders_revenues = spark.sql("""
 WITH largest_bidders As
-(SELECT bidder_name, sum(final_price)
+(SELECT bidder_name, sum(final_price) AS amount
 FROM data
 GROUP BY bidder_name
-order by sum(final_price) desc
-limit 15)
+ORDER BY amount desc
+LIMIT 15)
 
-SELECT tender_year, data.bidder_name, sum(final_price)
-from data
-join largest_bidders
-on largest_bidders.bidder_name = data.bidder_name
-where (data.tender_year is not null
-and
+SELECT tender_year, data.bidder_name, sum(final_price) AS amount
+FROM data
+JOIN largest_bidders
+ON largest_bidders.bidder_name = data.bidder_name
+WHERE (data.tender_year is not null
+AND
 data.final_price is not null)
-Group by tender_year, data.bidder_name;
+GROUP BY tender_year, data.bidder_name;
 """)
 
 # Write to Big Query
