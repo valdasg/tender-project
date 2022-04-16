@@ -23,7 +23,9 @@ All data should folow same schema to allow multisection data analytics across co
 ### Architecture diegram
 
 
+
 ![Arhitecture diagram](./images/architecture.png)
+
 
 
 ## Approach to Problem
