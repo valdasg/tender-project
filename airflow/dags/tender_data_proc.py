@@ -107,12 +107,6 @@ default_args = {
     'start_date': datetime(2020,1,1)
 }
 
-# Instantiate DAG
-
-default_args = {
-    'start_date': datetime(2020,1,1)
-}
-
 with DAG (
     dag_id = 'eu_proc_processing',
     schedule_interval = '@monthly',
