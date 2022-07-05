@@ -65,9 +65,9 @@ x-airflow-common:
     GCP_GCS_BUCKET: 'dl-eu-pub-tender'
   volumes:
     - ./dags:/opt/airflow/dags
-    - ./data:/opt/airflow/data
     - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins    
+    - ./plugins:/opt/airflow/plugins
+    - ./data:/opt/airflow/data
     - ~/.google/credentials/:/.google/credentials:ro
 
   user: "${AIRFLOW_UID:-50000}:0"
