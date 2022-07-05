@@ -18,6 +18,7 @@ spark = SparkSession.builder \
 
 spark.conf.set('temporaryGcsBucket', BUCKET )
 
+
 # BUild schema for csv data import. Use Pandas to get ppreliminary schema and update types as needed
 schema = types.StructType([
     types.StructField ("tender_row_nr", types.IntegerType(), True),          
