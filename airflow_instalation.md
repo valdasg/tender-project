@@ -12,7 +12,8 @@ psycopg2-binary
 pyspark
 ```
 
-Official Apache Airflow [docker-compose.yaml](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml) file will be used, replacing Google project attributes witt ones used in this particular project.
+Dockerfile is created with all needed modules and dependancies and Google sdk.
+Official Apache Airflow [docker-compose.yaml](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml) file will be used, replacing Google project attributes with ones used in this particular project. 
 
 From an Airflow folder, containing Dockerfiles, run:
 
