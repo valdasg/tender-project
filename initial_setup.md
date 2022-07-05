@@ -24,9 +24,9 @@ from a CLI and VM as well as data lake bucket is created.
 I am connecting to virtual machine via VS codes SSH terminal: I have created ssh keys with a following command from [GCP documentation](https://cloud.google.com/compute/docs/connect/create-ssh-keys#windows-10-or-later) and placed in .ssh directory.
 
 ```
-ssh-keygen -t rsa -f C:\Users\WINDOWS_USER\.ssh\KEY_FILENAME -C VM_USER -b 2048
+ssh-keygen -t rsa -f gcp -C valdas -b 2048
 ```
-To make a connection public key need to be placed to Google console Metadata page (documentation [here](https://cloud.google.com/compute/docs/connect/add-ssh-keys)). 
+To make a connection public key need to be placed to Google console Metadata / SSH keys page (documentation [here](https://cloud.google.com/compute/docs/connect/add-ssh-keys)). 
 
 ### Install Anaconda
 While connected to VM:
