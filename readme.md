@@ -1,6 +1,6 @@
 # Introduction
 This repository contains a workflow of extracting loading and transforming of EU public procurement data to receive actionable insights.
-Raw data contains public procurement data from all EU countries from 2009 to 2020. 
+Raw data contains public procurement data from all EU countries from 2009 to 2020.
 
 ## Problem Description
 Dataset is located on a public [dataset](https://opentender.eu/all/download) contains zipped raw data (csv unzipped) divided by country abreviation and year of procurement.
