@@ -36,4 +36,4 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 Running airflow-init also creates all neccesary directories for Airflow operation like dags, logs, plugins.
 Running Airflow on VM requires port forward and is accessed at localhost:8080.
 
-
+Airflow interface is available on [localhost:8080](http://localhost:8080/home)
