@@ -28,9 +28,9 @@ Pipeline step by step:
 
 2. Download abbreviation list and parametrise downlowds of country data:
 
-    Make sure, users / owners are the same for Airflow directory, othrevise:
+    Make sure, to create dags/plugins/logs directories manually, othrewise grant permission to write fro docker:
     ```
-    sudo chown -R valdas airflow-docker
+    sudo chown -R docker airflow-docker
     ```
     I have used Python script to generate file names with Pandas data frame, loop through data and upload it to Google Data lake:
     ```
