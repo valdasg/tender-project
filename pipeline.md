@@ -30,7 +30,7 @@ Pipeline step by step:
 
     Make sure, users / owners are the same for Airflow directory, othrevise:
     ```
-    sudo chown -R [user] airflow
+    sudo chown -R valdas airflow-docker
     ```
     I have used Python script to generate file names with Pandas data frame, loop through data and upload it to Google Data lake:
     ```
