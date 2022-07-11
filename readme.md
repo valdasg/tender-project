@@ -45,6 +45,11 @@ All data should folow same schema to allow multisection data analytics across co
    - Create a data conncettion to Big Query
    - Design a dashboard
 
+## Security component
+GCP requires to create a project and account with a permissions.
+For development environmet, I will use account with Big Query admin, Dataproc admin and Service account user permissions.
+GCP also creates service accounts for services it uses.
+
 ## To reproduce project:
  1. Create VM on Google Cloud
  2. Follow instructions [here](initial_setup.md)
